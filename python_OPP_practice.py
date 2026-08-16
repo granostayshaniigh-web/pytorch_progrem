@@ -88,21 +88,26 @@ class eduManagement:
 
         while True:
             choice = eval(input("请输入您的选择：1-6\n"))
-            if choice == 1:
-                self.add_Student()
-            elif choice == 2:
-                self.update_Student()
-            elif choice == 3:
-                self.delete_Student()
-            elif choice == 4:
-                self.query_Student()
-            elif choice == 5:
-                self.show_Student()
-            elif choice == 6:
-                print("谢谢使用")
-                break
-            else:
-                print("输入错误重新输入1-6")
+            try:
+                if choice == 1:
+                    self.add_Student()
+                elif choice == 2:
+                    self.update_Student()
+                elif choice == 3:
+                    self.delete_Student()
+                elif choice == 4:
+                    self.query_Student()
+                elif choice == 5:
+                    self.show_Student()
+                elif choice == 6:
+                    print("谢谢使用")
+                    break
+                else:
+                    print("输入错误重新输入1-6")
+            except Exception as e:
+                print("有错误，错误为：",e)
+                continue
+
 
 if __name__ =="__main__":
     edu = eduManagement()
